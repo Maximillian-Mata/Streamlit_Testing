@@ -15,9 +15,12 @@ def GetIP():
     return 
 
 def GetVideo(url):
-    yt = YouTube(url=url)
-    best = yt.streams.get_highest_resolution()
-    best.download()
+    try:
+        yt = YouTube(url=url)
+        best = yt.streams.get_highest_resolution()
+        best.download()
+    except Exception as e:
+        st.write(f"Error Occurred:{e}")
 
 
 
