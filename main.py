@@ -53,4 +53,4 @@ alert("hello")
 
 my_html = f"<script>{my_js}</script>"
 
-html(my_html)
+#html(my_html)
