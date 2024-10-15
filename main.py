@@ -73,7 +73,7 @@ st.button("Get IP", on_click=GetIP)
 get_token = st.button("Update Po")
 if get_token:
     output = subprocess.run(['node', "potoken.js"], capture_output=True, text=True)
-    st.write(str(output.stdout))
+    st.write(str(output))
     f= open("Mytokens.txt")
     st.write(f.read())
     f.close()
