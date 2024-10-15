@@ -12,11 +12,11 @@ def check_npm_installed():
         result = subprocess.run(['npm', '-v'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         
         if result.returncode == 0:
-            print(f"npm is installed, version: {result.stdout.strip()}")
+            st.write(f"npm is installed, version: {result.stdout.strip()}")
         else:
-            print("npm is not installed.")
+            st.write("npm is not installed.")
     except FileNotFoundError:
-        print("npm is not installed.")
+        st.write("npm is not installed.")
 
 # Call the function
 check_npm_installed()
