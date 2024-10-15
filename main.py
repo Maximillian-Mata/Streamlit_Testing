@@ -74,7 +74,7 @@ get_token = st.button("Update Po")
 if get_token:
     subprocess.run(['node', "potoken.js"], capture_output=True, text=True)
     f= open("Mytokens.txt")
-    st.write_stream(f.read())
+    st.write(f.read())
     f.close()
 
 
