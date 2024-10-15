@@ -1,2 +1,2 @@
 nodejs
-npm
+npm=10.9.0
