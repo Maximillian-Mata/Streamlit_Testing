@@ -19,7 +19,7 @@ def check_npm_installed():
         st.write("npm is not installed.")
 
 # Call the function
-#check_npm_installed()
+check_npm_installed()
 
 
 def install_npm_package(package_name):
