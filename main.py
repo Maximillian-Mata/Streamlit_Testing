@@ -9,7 +9,6 @@ import subprocess
 def check_npm_installed():
     try:
         # Run the command 'npm -v' to check if npm is installed
-        subprocess.run(['npm', 'install', 'npm@latest'])
         result = subprocess.run(['npm', '-v'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         
         if result.returncode == 0:
@@ -39,7 +38,7 @@ def Check_npm_list():
     listed = subprocess.run(['npm','ls'], capture_output=True, text=True)
     st.write(str(listed.stdout))
 
-#Check_npm_list()
+Check_npm_list()
 
 st.title("Streamlit Testing")
 st.write("This is my streamlit testing app for development purposes.")
