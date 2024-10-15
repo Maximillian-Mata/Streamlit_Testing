@@ -22,6 +22,22 @@ def check_npm_installed():
 check_npm_installed()
 
 
+def check_yarn_installed():
+    try:
+        # Run the command 'npm -v' to check if npm is installed
+        result = subprocess.run(['yarn', '-v'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        
+        if result.returncode == 0:
+            st.write(f"npm is installed, version: {result.stdout.strip()}")
+        else:
+            st.write("npm is not installed.")
+    except FileNotFoundError:
+        st.write("npm is not installed.")
+
+# Call the function
+check_yarn_installed()
+
+
 def install_npm_package(package_name):
     try:
         # Run the npm install command using subprocess
