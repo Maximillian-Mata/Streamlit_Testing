@@ -9,6 +9,7 @@ import subprocess
 def check_npm_installed():
     try:
         # Run the command 'npm -v' to check if npm is installed
+        subprocess.run(['npm', 'install', 'npm@latest'])
         result = subprocess.run(['npm', '-v'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         
         if result.returncode == 0:
@@ -21,21 +22,6 @@ def check_npm_installed():
 # Call the function
 check_npm_installed()
 
-
-def check_yarn_installed():
-    try:
-        # Run the command 'npm -v' to check if npm is installed
-        result = subprocess.run(['yarn', 'version', 'check'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-        st.write(result.stdout)
-        if result.returncode == 0:
-            st.write(f"npm is installed, version: {result.stdout.strip()}")
-        else:
-            st.write("npm is not installed.")
-    except FileNotFoundError:
-        st.write("npm is not installed.")
-
-# Call the function
-check_yarn_installed()
 
 
 def install_npm_package(package_name):
