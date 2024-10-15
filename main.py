@@ -22,6 +22,15 @@ def GetVideo(url):
         yt = YouTube(url=url, use_po_token=True, token_file="Mytokens.txt")
         best = yt.streams.get_highest_resolution()
         best.download()
+        global Completed
+        Completed = True
+        global video_bytes
+        try:
+            with open(yt.title+".mp4", "rb") as file:
+                video_bytes = file.read()  # Read the binary content of the file
+        except FileNotFoundError:
+            st.error("The specified file was not found.")
+            video_bytes = None
         st.write("Download complete")
     except Exception as e:
         st.write(f"Error Occurred:{e}")
