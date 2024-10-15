@@ -6,6 +6,17 @@ import socket
 # node usage
 import subprocess
 
+
+def install_npm_package(package_name):
+    try:
+        # Run the npm install command using subprocess
+        subprocess.run(['npm', 'install', package_name], check=True)
+        print(f"{package_name} installed successfully.")
+    except subprocess.CalledProcessError as e:
+        print(f"Failed to install {package_name}: {e}")
+
+install_npm_package('youtube-po-token-generator')
+
 st.title("Streamlit Testing")
 st.write("This is my streamlit testing app for development purposes.")
 
