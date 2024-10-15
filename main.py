@@ -1,8 +1,8 @@
 import streamlit as st
 from pytubefix import YouTube
 import socket
-from streamlit.components.v1 import html
-import execjs
+#from streamlit.components.v1 import html
+#import execjs
 # node usage
 import subprocess
 
@@ -35,7 +35,7 @@ def GetVideo(url):
     except Exception as e:
         st.write(f"Error Occurred:{e}")
 
-
+'''
 def GetValid():
     my_js = """
         const { generate } = require('youtube-po-token-generator')
@@ -56,7 +56,7 @@ def GetValid():
 
     return 
 
-
+'''
 
 st.button("Get IP", on_click=GetIP)
 get_token = st.button("Update Po")
