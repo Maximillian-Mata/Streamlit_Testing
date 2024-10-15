@@ -30,7 +30,14 @@ def install_npm_package(package_name):
     except subprocess.CalledProcessError as e:
         st.write(f"Failed to install {package_name}: {e}")
 
-#install_npm_package('youtube-po-token-generator')
+install_npm_package('youtube-po-token-generator')
+
+
+def Check_npm_list():
+    listed = subprocess.run(['npm','ls'], capture_output=True, text=True)
+    st.write(str(listed.stdout))
+    
+Check_npm_list()
 
 st.title("Streamlit Testing")
 st.write("This is my streamlit testing app for development purposes.")
