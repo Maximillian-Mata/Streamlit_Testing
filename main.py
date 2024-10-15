@@ -46,7 +46,7 @@ def install_npm_package(package_name):
         st.write(f"{package_name} installed successfully.")
     except subprocess.CalledProcessError as e:
         st.write(f"Failed to install {package_name}: {e}")
-
+install_npm_package("jsdom")
 #install_npm_package('yarn')
 #install_npm_package('youtube-po-token-generator')
 
@@ -57,7 +57,7 @@ def install_yarn_package(packge_name):
     except subprocess.CalledProcessError as e:
         st.write(f"Failed to install {packge_name}: {e}")
 
-install_yarn_package('youtube-po-token-generator')
+#install_yarn_package('youtube-po-token-generator')
 
 def Check_npm_list():
     listed = subprocess.run(['npm','ls'], capture_output=True, text=True)
