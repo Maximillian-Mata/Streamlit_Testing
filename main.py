@@ -6,6 +6,22 @@ import socket
 # node usage
 import subprocess
 
+
+def check_node_installed():
+    try:
+        # Run the command 'npm -v' to check if npm is installed
+        result = subprocess.run(['node', '-v'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        
+        if result.returncode == 0:
+            st.write(f"node is installed, version: {result.stdout.strip()}")
+        else:
+            st.write("node is not installed.")
+    except FileNotFoundError:
+        st.write("node is not installed.")
+
+# Call the function
+check_node_installed()
+
 def check_npm_installed():
     try:
         # Run the command 'npm -v' to check if npm is installed
