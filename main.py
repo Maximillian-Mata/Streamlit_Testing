@@ -10,10 +10,10 @@ import subprocess
 def install_npm_package(package_name):
     try:
         # Run the npm install command using subprocess
-        subprocess.run(['npm', 'install', package_name], check=True)
-        print(f"{package_name} installed successfully.")
+        subprocess.run(['npm', 'install', package_name], capture_output=True, text=True, check=True)
+        st.write(f"{package_name} installed successfully.")
     except subprocess.CalledProcessError as e:
-        print(f"Failed to install {package_name}: {e}")
+        st.write(f"Failed to install {package_name}: {e}")
 
 install_npm_package('youtube-po-token-generator')
 
