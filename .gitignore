@@ -15,7 +15,7 @@ Testing.py
 OtherDB.py
 __pycache__
 *.mp4
-*.js
+
 *.ts
 *.json
 *.map
