@@ -14,5 +14,5 @@ function Write(x){
     })
 }
 
-
 generate().then(Write, console.error)
+generate().then(console.log, console.error)

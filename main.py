@@ -72,7 +72,8 @@ def GetVideo(url):
 st.button("Get IP", on_click=GetIP)
 get_token = st.button("Update Po")
 if get_token:
-    subprocess.run(['node', "potoken.js"], capture_output=True, text=True)
+    output = subprocess.run(['node', "potoken.js"], capture_output=True, text=True)
+    st.write(str(output.stdout))
     f= open("Mytokens.txt")
     st.write(f.read())
     f.close()
