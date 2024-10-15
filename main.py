@@ -46,28 +46,6 @@ def GetVideo(url):
     except Exception as e:
         st.write(f"Error Occurred:{e}")
 
-'''
-def GetValid():
-    my_js = """
-        const { generate } = require('youtube-po-token-generator')
-
-        let visitor;
-        let po;
-
-        function Collect(items){
-            visitor = items.visitorData;
-            po = items.poToken;
-        }
-
-        generate().then(Collect, console.err)
-
-        """
-    ctx = execjs.compile(my_js)
-    ctx.call("generate")
-
-    return 
-
-'''
 
 st.button("Get IP", on_click=GetIP)
 get_token = st.button("Update Po")
